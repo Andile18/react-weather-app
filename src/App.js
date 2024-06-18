@@ -9,9 +9,10 @@ export default function App() {
       This project was coded by Zama Andile Dlamini & it is {" "}  
       <a href="https://github.com/Andile18/react-weather-app" target="_blank">
         
-        open-sourced on Github</a>
+        open-sourced on Github
+        </a>
          </footer>
           </div>
-  )
+  );
 }
 
