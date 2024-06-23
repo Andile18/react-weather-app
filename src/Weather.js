@@ -1,66 +1,99 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Weather.css";
-export default function Weather (){
-    return (
-        <div className="Weather"> 
+import axios from "axios";
 
 
-        <form> 
-        <div className="row"> 
-        <div className="col-9">
+export default function Weather (props){
+  const [ weatherData, setweatherData] = useState({ ready: false });
+    
 
-            <input type ="search" 
-            placeholder ="Enter a city.."
-            className ="form-control" 
-            autoFocus="on"
-            />
+     function handleResponse (response){
+        console.log (response.data);
+        setweatherData({
+                       ready: true,
+            temperature:response.data.main.temp,
+                       humadity: response.data.main.humadity,  
+                       date: "Saturday 03:17",
+                       description: response.data.weather[0].description,
+                       iconUrl: "https://ss1.gstatic.com/onebox/weather/64/partly_cloudy.png",
+                       wind: response.data.wind.speed,
+                        City: response.data.name});
+        
+    }
+    
 
-            </div>
-            <div className="col-3">
-
-            <input type ="submit" 
-            className ="btn btn-primary w-100"
-             value ="Search" />
+    if (weatherData.ready){
+            return (
+                <div className="Weather"> 
+        
+        
+                <form> 
+                <div className="row"> 
+                <div className="col-9">
+        
+                    <input type ="search" 
+                    placeholder ="Enter a city.."
+                    className ="form-control" 
+                    autoFocus="on"
+                    />
+        
+                    </div>
+                    <div className="col-3">
+        
+                    <input type ="submit" 
+                    className ="btn btn-primary w-100"
+                     value ="Search" />
+                    
+                </div>
+                </div>
+                </form>
             
-        </div>
-        </div>
-        </form>
-    
+                
+                <h1>{weatherData.City}</h1> 
         
-        <h1>Cape Town </h1> 
+                <ul>   
+                <li> {weatherData.date}</li>
+                <li className="text-capitalize"> {weatherData.description} </li>
+                </ul>
 
-        <ul>
-           
-         <li> Tuesday 18:30</li>
-         <li> Rainy </li>
-
-        </ul>
-       <div className="row mt-3">
-       <div className="col-6"> 
-       <div className="clearfix">
-       <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" 
-       alt="raining" />
-       
-       
-      
-       <span className="temperature">6</span>
-       <span className="units">°C</span> 
-    
-    
-       
- </div>
-    <div className="col-6">
-
-    <ul>
-        <li> Precipitation:70% </li>
-        <li> Humadity:97% </li>
-        <li>Wind:19km/h </li>
-     </ul>
-
-</div>
-    </div>
-    </div>
-    </div>
+               <div className="row mt-3">
+               <div className="col-6"> 
+               <div className="clearfix">
+               <img src={weatherData.iconUrl}
+               alt={weatherData.description}
+              />
+               
+               
+              
+             <span className="temperature"> { Math.round(weatherData.temperature )}</span>
+               <span className="units">°C</span> 
+            
+            
+               
+            </div>
+            <div className="col-6">
         
-    );
-}
+                <ul>
+                <li>Humadity:{weatherData.humadity}% </li>
+                <li>Wind:{weatherData.wind}km/h </li>
+                </ul>
+         
+            </div>
+            </div>
+            </div>
+            </div>
+                
+            );
+
+        
+    }else{
+
+    
+    const apiKey= "d0fb080483e20b38f546f3709468468e";
+   let apiUrl= `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+   
+    
+    return "Loading..";
+    }
+      }
