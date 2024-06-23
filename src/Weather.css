@@ -22,21 +22,25 @@
     list-style: none;
 }
 
-.Weather li {
+.Weather ul {
     margin: 0;
     padding: 0;
-}
+  }
 
-.Weather .temperature{
-    font-size: 65px;
-    font-weight: 400;
+.Weather .temperature {
     font-weight: bold;
     color: rgb(33, 33, 33);
+    font-size: 64px;
     line-height: 64px;
-}
+    margin-left: 5px;
+    font-weight: 400;
+    margin-left: 10px;
+  }
+  
+
 
 .Weather img {
-    height: 68px;
+    height: 65px;
     margin-right: 10px;
     width: 64px;
     display: inline-block;
