@@ -50,7 +50,7 @@
     display: inline-block;
     position:absolute;
 }
-.Weather .units {
+.Weather .unit {
     color: rgb(53, 33, 33);
     font-size: 16px;
     font-weight: 400;
