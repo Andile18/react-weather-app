@@ -1,9 +1,9 @@
 import React from "react";
-import ReactAnimatedWeather from 'react-animated-weather';
+import ReactAnimatedWeather from "react-animated-weather";
 
 
 export default function WeatherIcon(props){
-console.log(props.code);
+
 
     const codeMapping = {
     "01d": "CLEAR_DAY",
@@ -23,7 +23,7 @@ console.log(props.code);
     "13d": "SNOW",
     "13n": "SNOW",
     "50d": "FOG",
-    "50n": "FOG"
+    "50n": "FOG",
     
 };
 
@@ -37,7 +37,7 @@ console.log(props.code);
         animate={true}
       />
     );
-    }
+}
 
 
 
