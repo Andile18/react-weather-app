@@ -1,0 +1,21 @@
+.WeatherForecast {
+    background-color: #d9d9d9;
+    border-radius: 6px;
+    padding: 15px;
+  }
+  .WeatherForecast .WeatherForecast-day {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  .WeatherForecast .WeatherForecast-min-temp {
+    font-size: 18px;
+    color: #6242bd;
+    font-weight: 500;
+  }
+  .WeatherForecast .WeatherForecast-max-temp {
+    font-size: 18px;
+    color: #6242bd;
+    font-weight: 500;
+    opacity: 0.6;
+  }
