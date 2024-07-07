@@ -23,9 +23,32 @@ if (loaded){
         <div className="Forecast">    
         <div className="row">
             <div className="col"> 
- 
- 
-        <ForecastDay  data={weatherData[0]} />
+            <ForecastDay  data={weatherData[0]} />
+
+        </div>
+        <div className="col"> 
+            <ForecastDay  data={weatherData[1]} />
+            
+        </div>
+        <div className="col"> 
+            <ForecastDay  data={weatherData[2]} />
+            
+        </div>
+        <div className="col"> 
+            <ForecastDay  data={weatherData[3]} />
+            
+        </div>
+        <div className="col"> 
+            <ForecastDay  data={weatherData[4]} />
+            
+        </div>
+        <div className="col"> 
+            <ForecastDay  data={weatherData[5]} />
+            
+        </div>
+        <div className="col"> 
+            <ForecastDay  data={weatherData[6]} />
+            
         </div>
         </div>
         </div>
