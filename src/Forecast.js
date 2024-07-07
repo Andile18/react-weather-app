@@ -42,14 +42,9 @@ if (loaded){
             <ForecastDay  data={weatherData[4]} />
             
         </div>
-        <div className="col"> 
-            <ForecastDay  data={weatherData[5]} />
-            
-        </div>
-        <div className="col"> 
-            <ForecastDay  data={weatherData[6]} />
-            
-        </div>
+       
+      
+        
         </div>
         </div>
     
@@ -60,7 +55,7 @@ else {
     
       
 
-let apiKey= "3f6be1c407b0d9d1933561808db358ba";
+let apiKey= "ce144f0cf51fa43f03431f0488a36728";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
