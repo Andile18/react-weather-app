@@ -20,7 +20,7 @@ export default function WeatherForecast(props) {
             if (index < 5) {
               return (
                 <div className="col" key={index}>
-                  <WeatherForecastDay data={dailyForecast} />
+                  <weatherForecastDay data={dailyForecast} />
                 </div>
               );
             } else {
